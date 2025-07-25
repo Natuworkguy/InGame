@@ -1,6 +1,6 @@
 # InGame 🎮
 
-**InGame** is a lightweight Python library designed to simplify keyboard event handling within a basic GUI window using `tkinter`. It enables developers to easily register and trigger events based on key presses with clean, decorator-based syntax.
+**InGame** is a lightweight Python library designed to simplify UI making within a basic GUI window using `tkinter`. It enables developers to easily register and trigger events based on key presses with clean, decorator-based syntax.
 
 ---
 
