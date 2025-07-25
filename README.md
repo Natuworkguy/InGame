@@ -26,18 +26,18 @@ No installation required! Just drop `ingame.py` into your project.
 ```python
 from ingame import InGame, Screen, EventType
 
-game = InGame()
+app = InGame()
 
-@game.event(type=EventType.Key.A)
+@app.event(type=EventType.Key.A)
 def handle_a():
     print("Key A pressed!")
 
-@game.event(type=EventType.Key.ESCAPE)
+@app.event(type=EventType.Key.ESCAPE)
 def handle_escape():
     print("Escape pressed!")
     screen.quit()
 
-screen = Screen(game, title="My InGame App", width=600, height=400)
+screen = Screen(app, title="My InGame App", width=600, height=400)
 screen.show()
 ````
 
