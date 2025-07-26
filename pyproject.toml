@@ -1,0 +1,19 @@
+[project]
+name = "ingame"
+version = "0.1.0"
+description = "A window and UI library based on tkinter"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+  { name = "Naatuworkguy", email = "info@nathannetwork.com" },
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Natuworkguy/ingame"
+"Bug Tracker" = "https://github.com/Natuworkguy/ingame/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
