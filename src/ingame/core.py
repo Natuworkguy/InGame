@@ -103,8 +103,9 @@ class Screen:
         self.root.title(title)
         self.root.bind("<KeyPress>", on_key_press)
         self.root.geometry(f"{width}x{height}")
-        self.canvas = tk.Canvas(self.root, width=width, height=height, bg="white")
-        self.canvas.pack(fill="both", expand=True)
+
+    def set_icon(self, path: str, **kwargs) -> None:
+        self.root.iconbitmap(path, **kwargs)
 
     def show(self) -> None:
         self.root.mainloop()
