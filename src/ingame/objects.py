@@ -1,7 +1,9 @@
 import tkinter as tk
 
 def Button(
-    tk_obj: tk.Tk,
+    screen_obj = None,
     **kwargs
-) -> tk.Button:
-    return tk.Button(tk_obj, **kwargs)
+) -> None:
+    if screen_obj is None:
+        raise TypeError("Parameter \"screen_obj\" must be specified.")
+    return tk.Button(screen_obj.root, **kwargs).pack(**kwargs)
