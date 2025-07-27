@@ -3,6 +3,7 @@ from typing import Callable, Any, Optional
 import inspect
 from enum import Enum
 import tkinter as tk
+from .objects import Button
 
 class InGameException(Exception):
     """Exception for InGame module"""
@@ -57,7 +58,7 @@ class InGame:
         self,
         /,
         type: Optional[EventsType] = None
-    ) -> Callable[[Callable[[], Any]], Callable[[], None]]:
+    ) -> Callable[[Callable[[], Optional[Any]]], Callable[[], None]]:
         """
         Decorator to Register an event to the InGame application
         Parameters:
@@ -66,7 +67,7 @@ class InGame:
         if type is None:
             raise InGameException("Parameter 'type' must be specified.")
 
-        def decorator(func: Callable[[], Any]) -> Callable[[], None]:
+        def decorator(func: Callable[[], Optional[Any]]) -> Callable[[], None]:
             if not inspect.isfunction(func):
                 raise InGameException("Parameter 'func' must be a function.")
 
@@ -90,7 +91,7 @@ class InGame:
         """
         if not isinstance(type, EventsType):
             raise InGameException(f"Type argument must be of type EventsType, not {type.__class__.__name__}")
-        func = self.events.get(type)
+        func: Optional[Callable[[], Any]] = self.events.get(type)
         if func is None:
             raise InGameException(f"No event for {type.name}")
         func()
@@ -125,10 +126,21 @@ class Screen:
         self.root.bind("<KeyPress>", on_key_press)
         self.root.geometry(f"{width}x{height}")
 
-    def show(self) -> None:
+    def show(
+        self
+    ) -> None:
         """Show the window"""
         self.root.mainloop()
 
-    def quit(self) -> None:
+    def add(
+        self,
+        obj: Callable[[tk.Tk], tk.Button],
+        **kwargs
+    ) -> None:
+        obj(self.root, **kwargs).pack(**kwargs)
+
+    def quit(
+        self
+    ) -> None:
         """Quit the window"""
         self.root.destroy()
