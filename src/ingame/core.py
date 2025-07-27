@@ -47,6 +47,7 @@ class EventType:
 EventsType = EventType.Key
 
 class InGame:
+    """InGame main application"""
     events: dict[EventsType, Callable[[], None]]
 
     def __init__(self) -> None:
@@ -57,6 +58,11 @@ class InGame:
         /,
         type: Optional[EventsType] = None
     ) -> Callable[[Callable[[], Any]], Callable[[], None]]:
+        """
+        Register an event to the InGame application
+        Parameters:
+            type: Optional[EventsType]
+        """
         if type is None:
             raise InGameException("Parameter 'type' must be specified.")
 
@@ -77,12 +83,27 @@ class InGame:
         self,
         type: EventsType
     ) -> None:
+        """
+        Triggers a registered event in the InGame application.
+        Parameters:
+            type: EventsType
+        """
+        if not isinstance(type, EventsType):
+            raise InGameException(f"Type argument must be of type EventsType, not {type.__class__.__name__}")
         func = self.events.get(type)
         if func is None:
             raise InGameException(f"No event for {type.name}")
         func()
 
+    def clear_events(
+        self
+    ) -> None:
+        """Clears all registered events"""
+        self.events = {}
+
 class Screen:
+    """Application window"""
+    root: tk.Tk
     def __init__(
         self,
         ingame_obj: InGame,
@@ -92,7 +113,7 @@ class Screen:
         title: str = "InGame Window"
     ) -> None:
         def on_key_press(event: tk.Event) -> None:
-            key = event.keysym.upper()
+            key: str = event.keysym.upper()
             if key in EventType.Key.__members__:
                 try:
                     ingame_obj.trigger_event(EventType.Key[key])
@@ -104,11 +125,10 @@ class Screen:
         self.root.bind("<KeyPress>", on_key_press)
         self.root.geometry(f"{width}x{height}")
 
-    def set_icon(self, path: str, **kwargs) -> None:
-        self.root.iconbitmap(path, **kwargs)
-
     def show(self) -> None:
+        """Show the window"""
         self.root.mainloop()
 
     def quit(self) -> None:
+        """Quit the window"""
         self.root.destroy()
