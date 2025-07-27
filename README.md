@@ -1,6 +1,6 @@
 # InGame 🎮
 
-**InGame** is a lightweight Python library designed to simplify UI making within a basic GUI window using `tkinter`. It enables developers to easily register and trigger events based on key presses with clean, decorator-based syntax.
+**InGame** is a lightweight Python library designed to simplify making amazing UIs within a basic GUI window using `tkinter`. It enables developers to easily register and trigger events based on key presses with clean, decorator-based syntax.
 
 ---
 
@@ -67,7 +67,6 @@ Handles registering and triggering events:
 Simple `tkinter` window with key event binding:
 
 * `show()`: Opens the window and starts listening for key presses.
-* `set_icon(path)`: Sets the application icon.
 * `quit()`: Closes the window.
 
 ---
@@ -87,7 +86,7 @@ Uses `tkinter`, `Enum`, and `inspect`.
 
 ## 📄 License
 
-MIT License (Add your own license here if different)
+[MIT License](LICENSE)
 
 ---
 
