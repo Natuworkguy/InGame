@@ -59,7 +59,7 @@ class InGame:
         type: Optional[EventsType] = None
     ) -> Callable[[Callable[[], Any]], Callable[[], None]]:
         """
-        Register an event to the InGame application
+        Decorator to Register an event to the InGame application
         Parameters:
             type: Optional[EventsType]
         """
