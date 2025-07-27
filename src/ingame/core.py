@@ -132,13 +132,6 @@ class Screen:
         """Show the window"""
         self.root.mainloop()
 
-    def add(
-        self,
-        obj: Callable[[tk.Tk], tk.Button],
-        **kwargs
-    ) -> None:
-        obj(self.root, **kwargs).pack(**kwargs)
-
     def quit(
         self
     ) -> None:
