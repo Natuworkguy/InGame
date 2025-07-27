@@ -17,7 +17,7 @@
 
 ### 🔧 Installation
 
-No installation required! Just drop `ingame.py` into your project.
+Use `pip install ingame` to install the project.
 
 ---
 
@@ -67,6 +67,7 @@ Handles registering and triggering events:
 Simple `tkinter` window with key event binding:
 
 * `show()`: Opens the window and starts listening for key presses.
+* `set_icon(path)`: Sets the application icon.
 * `quit()`: Closes the window.
 
 ---
