@@ -14,4 +14,4 @@ class Button:
         if packargs is None:
             packargs = {}
 
-        tk.Button(screen_obj.root, **kwargs).pack(**packargs)
+        tk.Button(screen_obj.root, **kwargs).pack(**{k: v for k, v in packargs.items() if v is not None})
