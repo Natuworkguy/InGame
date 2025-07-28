@@ -24,7 +24,7 @@ Use `pip install ingame` to install the project.
 ## 🧠 Usage Example
 
 ```python
-from ingame import InGame, Screen, EventType
+from ingame.core import InGame, Screen, EventType
 
 app = InGame()
 
