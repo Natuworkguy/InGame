@@ -3,7 +3,6 @@ from typing import Callable, Any, Optional
 import inspect
 from enum import Enum
 import tkinter as tk
-from .objects import Button
 
 class InGameException(Exception):
     """Exception for InGame module"""
