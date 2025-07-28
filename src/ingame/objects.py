@@ -5,6 +5,7 @@ class Button:
     def __init__(
         self,
         screen_obj: Optional[Any] = None,
+        /,
         packargs: Optional[dict[Any, Optional[Any]]] = None,
         **kwargs: Any
     ) -> None:
