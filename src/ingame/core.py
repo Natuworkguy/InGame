@@ -120,6 +120,11 @@ class Screen:
                 except InGameException:
                     pass
 
+        if not isinstance(width, int):
+            raise InGameException(f"Width must be of type int, not {width.__class__.__name__}.")
+        elif not isinstance(height, int):
+            raise InGameException(f"Height must be of type int, not {height.__class__.__name__}.")
+
         self.root = tk.Tk()
         self.root.title(title)
         self.root.bind("<KeyPress>", on_key_press)
