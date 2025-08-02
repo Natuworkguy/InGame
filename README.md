@@ -2,6 +2,12 @@
 
 **InGame** is a lightweight Python library designed to simplify making amazing UIs within a basic GUI window using `tkinter`. It enables developers to easily register and trigger events based on key presses with clean, decorator-based syntax.
 
+<div align="center">
+  <a href="https://pypi.org/project/ingame/"><img src="https://img.shields.io/pypi/v/ingame?color=brightgreen&label=Version" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/Natuworkguy/InGame" /></a>
+  <a href><img src="https://img.shields.io/github/stars/Natuworkguy/InGame?style=social" /></a>
+</div>
+
 ---
 
 ## ✨ Features
