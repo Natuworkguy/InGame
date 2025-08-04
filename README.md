@@ -93,7 +93,7 @@ Uses `tkinter`, `Enum`, and `inspect`.
 
 ## 📄 License
 
-[**`MIT License`**](LICENSE)
+[**`MIT License`**](https://github.com/Natuworkguy/InGame/blob/main/LICENSE)
 
 ---
 
