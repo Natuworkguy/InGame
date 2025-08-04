@@ -93,7 +93,7 @@ Uses `tkinter`, `Enum`, and `inspect`.
 
 ## 📄 License
 
-[MIT License](LICENSE)
+[**MIT License**](LICENSE)
 
 ---
 
