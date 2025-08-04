@@ -1,6 +1,6 @@
 [project]
 name = "ingame"
-version = "0.2.2"
+version = "0.2.3"
 description = "A window and UI library based on tkinter."
 readme = "README.md"
 requires-python = ">=3.9.6"
