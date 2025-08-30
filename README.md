@@ -47,6 +47,8 @@ def handle_escape():
 
 screen = Screen(app, title="My InGame App", width=600, height=400)
 
+screen.set_resize(True, True)
+
 hello_text = Text(screen, text="Hello!")
 Button(screen, text="Click me", command=hello_text.destroy)
 
