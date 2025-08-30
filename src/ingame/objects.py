@@ -23,6 +23,8 @@ class Button:
     def destroy(
         self
     ) -> None:
+        """Destroy button"""
+
         self.button_obj.destroy()
 
 class Text:
@@ -46,4 +48,6 @@ class Text:
     def destroy(
         self
     ) -> None:
+        """Destroy text"""
+
         self.text_obj.destroy()
