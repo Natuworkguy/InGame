@@ -1,5 +1,5 @@
 from functools import wraps
-from typing import Callable, Any, Optional
+from typing import Callable, Any, Optional, Union, NoReturn
 import inspect
 from enum import Enum
 import tkinter as tk
@@ -9,7 +9,11 @@ class InGameException(Exception):
     pass
 
 class EventType:
+    """Events that are detectable using the @InGame.event decorator"""
+
     class Key(Enum):
+        """Detect key press"""
+
         A = "A"
         B = "B"
         C = "C"
@@ -48,23 +52,27 @@ EventsType = EventType.Key
 
 class InGame:
     """InGame main application"""
+
     events: dict[EventsType, Callable[[], None]]
 
-    def __init__(self) -> None:
+    def __init__(
+        self
+    ) -> None:
         self.events = {}
 
     def event(
         self,
         /,
-        type: Optional[EventsType] = None
-    ) -> Callable[[Callable[[], Optional[Any]]], Callable[[], None]]:
+        type: EventsType
+    ) -> Union[Callable[[Callable[[], Optional[Any]]], Callable[[], None]], NoReturn]:
         """
         Decorator to Register an event to the InGame application
         Parameters:
             type: Optional[EventsType]
         """
-        if type is None:
-            raise InGameException("Parameter 'type' must be specified.")
+
+        if not isinstance(type, EventsType):
+            raise InGameException("Parameter 'type' must be of type EventsType")
 
         def decorator(func: Callable[[], Optional[Any]]) -> Callable[[], None]:
             if not inspect.isfunction(func):
@@ -88,6 +96,7 @@ class InGame:
         Parameters:
             type: EventsType
         """
+
         if not isinstance(type, EventsType):
             raise InGameException(f"Type argument must be of type EventsType, not {type.__class__.__name__}")
         func: Optional[Callable[[], Any]] = self.events.get(type)
@@ -99,11 +108,14 @@ class InGame:
         self
     ) -> None:
         """Clears all registered events"""
+
         self.events = {}
 
 class Screen:
     """Application window"""
+
     root: tk.Tk
+
     def __init__(
         self,
         ingame_obj: InGame,
@@ -130,14 +142,30 @@ class Screen:
         self.root.bind("<KeyPress>", on_key_press)
         self.root.geometry(f"{width}x{height}")
 
+    def set_resize(
+        self,
+        width: bool,
+        height: bool
+    ) -> None:
+        """Set if window can be resized"""
+
+        if not isinstance(width, bool):
+            raise InGameException("'width' parameter must be of type bool.")
+        elif not isinstance(height, bool):
+            raise InGameException("'height' parameter must be of type bool.")
+
+        self.root.resizable(width, height)
+
     def show(
         self
     ) -> None:
         """Show the window"""
+
         self.root.mainloop()
 
     def quit(
         self
     ) -> None:
         """Quit the window"""
+
         self.root.destroy()
