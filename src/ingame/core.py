@@ -9,7 +9,7 @@ class InGameException(Exception):
     pass
 
 class EventType:
-    """Events that are detectable using the @InGame.event decorator"""
+    """Events that are detectable using the `@InGame.event` decorator"""
 
     class Key(Enum):
         """Detect key press"""
@@ -89,8 +89,9 @@ class InGame:
     ) -> Union[Callable[[Callable[[], Optional[Any]]], Callable[[], None]], NoReturn]:
         """
         Decorator to Register an event to the InGame application
+
         Parameters:
-            type: Optional[EventsType]
+            - type - `Optional[EventsType]`
         """
 
         if not isinstance(type, EventsType):
@@ -162,7 +163,7 @@ class Screen:
         self.root = tk.Tk()
         self.root.title(title)
         self.root.bind("<KeyPress>", on_key_press)
-        self.root.geometry(f"{width}x{height}")
+        self.root.geometry(f"{str(width)}x{str(height)}")
 
     def set_resize(
         self,
