@@ -46,7 +46,7 @@ class Button(Object):
 
 class Text(Object):
     """
-    Creates a Label on the given Screen, packs it with optional args,
+    Creates text on the given Screen, packs it with optional args,
     and provides a destroy() method for cleanup.
     """
 
@@ -72,3 +72,37 @@ class Text(Object):
         """Destroy text"""
 
         self.text_obj.destroy()
+
+class Input(Object):
+    """
+    Creates a single line text input box on the given Screen, packs it with optional args,
+    and provides a destroy() method for cleanup.
+    """
+
+    input_obj: tk.Entry
+
+    def __init__(
+        self,
+        screen_obj: Screen,
+        /,
+        packargs: Optional[dict[Any, Optional[Any]]] = None,
+        **kwargs: Any
+    ) -> None:
+        if packargs is None:
+            packargs = {}
+
+        self.input_obj = tk.Entry(screen_obj.root, **kwargs)
+        self.input_obj.pack(**{k: v for k, v in packargs.items() if v is not None})
+
+    def get(
+        self
+    ) -> str:
+        return self.input_obj.get()
+
+    @override
+    def destroy(
+        self
+    ) -> None:
+        """Destroy text"""
+
+        self.input_obj.destroy()
