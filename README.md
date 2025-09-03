@@ -32,7 +32,7 @@ Use `pip install ingame` to install the project.
 
 ```python
 from ingame.core import InGame, Screen, EventType
-from ingame.objects import Text, Button
+from ingame.objects import Text, Button, Input
 
 app = InGame()
 
@@ -52,8 +52,17 @@ screen.set_resize(True, True)
 hello_text = Text(screen, text="Hello!")
 Button(screen, text="Click me", command=hello_text.destroy)
 
+ht_input = Input(screen, packargs={"pady": 10})
+
+def ht_click() -> None:
+    print(ht_input.get())
+
+Button(screen, text="Print input value", command=ht_click, packargs={"pady": 10})
+
+
+
 screen.show()
-````
+```
 
 ---
 
