@@ -127,12 +127,19 @@ class InGame:
             raise InGameException(f"No event for {type.name}")
         func()
 
-    def clear_events(
+    def clear_all_events(
         self
     ) -> None:
         """Clears all registered events"""
 
         self.events = {}
+
+    def clear_event(
+        self,
+        event: EventsType
+    ) -> None:
+        self.events.pop(event, None)
+
 
 class Screen:
     """Application window"""
