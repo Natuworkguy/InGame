@@ -5,7 +5,7 @@
 <div align="center">
   <a href="http://python.org/"><img src="https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white" /></a>
   <a href="https://pypi.org/project/ingame/"><img src="https://img.shields.io/pypi/v/ingame?color=brightgreen&label=version" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/Natuworkguy/InGame" /></a>
+  <a href="https://github.com/Natuworkguy/InGame/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Natuworkguy/InGame" /></a>
   <a href><img src="https://img.shields.io/github/stars/Natuworkguy/InGame?style=social" /></a>  
 </div>
 
