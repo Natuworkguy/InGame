@@ -11,8 +11,8 @@ authors = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/Natuworkguy/ingame"
-"Bug Tracker" = "https://github.com/Natuworkguy/ingame/issues"
+Homepage = "https://github.com/Natuworkguy/InGame"
+"Bug Tracker" = "https://github.com/Natuworkguy/InGame/issues"
 
 [build-system]
 requires = ["setuptools>=61.0"]
