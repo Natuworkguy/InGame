@@ -6,6 +6,7 @@ import tkinter as tk
 
 class InGameException(Exception):
     """Exception for InGame module"""
+
     pass
 
 class EventType:
@@ -70,6 +71,7 @@ class EventType:
 
         SHIFT_L = "SHIFT_L"
         SHIFT_R = "SHIFT_R"
+
 EventsType = EventType.Key
 
 class InGame:
@@ -101,7 +103,7 @@ class InGame:
             if not inspect.isfunction(func):
                 raise InGameException("Parameter 'func' must be a function.")
 
-            @wraps(func)
+            @wraps(wrapped=func)
             def wrapper() -> None:
                 self.events[type] = func
 
