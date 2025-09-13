@@ -30,6 +30,9 @@ class Button(Object):
         packargs: Optional[dict[Any, Optional[Any]]] = None,
         **kwargs: Any
     ) -> None:
+        if not isinstance(screen_obj, Screen):
+            raise TypeError("screen_obj must be an instance of Screen")
+
         if packargs is None:
             packargs = {}
 
@@ -59,6 +62,9 @@ class Text(Object):
         packargs: Optional[dict[Any, Optional[Any]]] = None,
         **kwargs: Any
     ) -> None:
+        if not isinstance(screen_obj, Screen):
+            raise TypeError("screen_obj must be an instance of Screen")
+
         if packargs is None:
             packargs = {}
 
@@ -88,6 +94,9 @@ class Input(Object):
         packargs: Optional[dict[Any, Optional[Any]]] = None,
         **kwargs: Any
     ) -> None:
+        if not isinstance(screen_obj, Screen):
+            raise TypeError("screen_obj must be an instance of Screen")
+
         if packargs is None:
             packargs = {}
 
