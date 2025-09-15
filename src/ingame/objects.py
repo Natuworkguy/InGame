@@ -1,5 +1,5 @@
 import tkinter as tk
-from typing import Optional, Any, override
+from typing import Optional, Any
 from .core import Screen
 
 class Object:
@@ -8,6 +8,10 @@ class Object:
     """
 
     def __init__(
+        self
+    ) -> None: ...
+
+    def config(
         self
     ) -> None: ...
 
@@ -39,7 +43,14 @@ class Button(Object):
         self.button_obj = tk.Button(screen_obj.root, **kwargs)
         self.button_obj.pack(**{k: v for k, v in packargs.items() if v is not None})
 
-    @override
+    def config(
+        self,
+        **kwargs
+    ) -> None:
+        """Configure object"""
+
+        self.button_obj.config(**kwargs)
+
     def destroy(
         self
     ) -> None:
@@ -71,7 +82,15 @@ class Text(Object):
         self.text_obj = tk.Label(screen_obj.root, **kwargs)
         self.text_obj.pack(**{k: v for k, v in packargs.items() if v is not None})
 
-    @override
+    def config(
+        self,
+        **kwargs
+    ) -> None:
+        """Configure object"""
+
+        self.text_obj.config(**kwargs)
+
+
     def destroy(
         self
     ) -> None:
@@ -106,9 +125,18 @@ class Input(Object):
     def get(
         self
     ) -> str:
+        """Get input box value"""
+
         return self.input_obj.get()
 
-    @override
+    def config(
+        self,
+        **kwargs
+    ) -> None:
+        """Configure object"""
+
+        self.input_obj.config(**kwargs)
+
     def destroy(
         self
     ) -> None:
