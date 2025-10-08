@@ -1,8 +1,9 @@
 import tkinter as tk
 from typing import Optional, Any
+from abc import ABC, abstractmethod
 from .core import Screen
 
-class Object:
+class Object(ABC):
     """
     Base object class
     """
@@ -11,10 +12,12 @@ class Object:
         self
     ) -> None: ...
 
+    @abstractmethod
     def config(
         self
     ) -> None: ...
 
+    @abstractmethod
     def destroy(
         self
     ) -> None: ...
