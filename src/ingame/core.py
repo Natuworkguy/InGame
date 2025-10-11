@@ -195,6 +195,21 @@ class Screen:
 
         self.root.mainloop()
 
+    def after(
+        self,
+        ms: int,
+        func: Callable[..., None],
+        *args: Any
+    ) -> None:
+        """Call a function after a certain amount of milliseconds"""
+
+        if not isinstance(ms, int):
+            raise InGameException(f"'ms' parameter must be of type int, not {ms.__class__.__name__}.")
+        elif not inspect.isfunction(func) and not inspect.ismethod(func):
+            raise InGameException("'func' parameter must be a function.")
+
+        self.root.after(ms, func, *args)
+
     def quit(
         self
     ) -> None:
