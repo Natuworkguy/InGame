@@ -146,3 +146,44 @@ class Input(Object):
         """Destroy text"""
 
         self.input_obj.destroy()
+
+class Image(Object):
+    """
+    Creates an image on the given Screen, packs it with optional args,
+    and provides a destroy() method for cleanup.
+    """
+
+    image_obj: tk.Label
+    
+    def __init__(
+        self,
+        screen_obj: Screen,
+        /,
+        image_path: str,
+        packargs: Optional[dict[Any, Optional[Any]]] = None,
+        **kwargs: Any
+    ) -> None:
+        if not isinstance(screen_obj, Screen):
+            raise TypeError("screen_obj must be an instance of Screen")
+
+        if packargs is None:
+            packargs = {}
+
+        self.photo_image = tk.PhotoImage(file=image_path)
+        self.image_obj = tk.Label(screen_obj.root, image=self.photo_image, **kwargs)
+        self.image_obj.pack(**{k: v for k, v in packargs.items() if v is not None})
+
+    def config(
+        self,
+        **kwargs
+    ) -> None:
+        """Configure object"""
+
+        self.image_obj.config(**kwargs)
+
+    def destroy(
+        self
+    ) -> None:
+        """Destroy image"""
+
+        self.image_obj.destroy()
