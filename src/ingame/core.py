@@ -206,7 +206,7 @@ class Screen:
         if not isinstance(ms, int):
             raise InGameException(f"'ms' parameter must be of type int, not {ms.__class__.__name__}.")
         elif not inspect.isfunction(func) and not inspect.ismethod(func):
-            raise InGameException("'func' parameter must be a function.")
+            raise InGameException("'func' parameter must be a function or method.")
 
         self.root.after(ms, func, *args)
 
