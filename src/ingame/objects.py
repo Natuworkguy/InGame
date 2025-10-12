@@ -2,6 +2,7 @@ import tkinter as tk
 from typing import Optional, Any
 from abc import ABC, abstractmethod
 from .core import Screen
+import os
 
 class Object(ABC):
     """
@@ -168,6 +169,9 @@ class Image(Object):
 
         if packargs is None:
             packargs = {}
+
+        if not os.path.isfile(image_path):
+            raise FileNotFoundError(f"Image file '{image_path}' not found.")
 
         self.photo_image = tk.PhotoImage(file=image_path)
         self.image_obj = tk.Label(screen_obj.root, image=self.photo_image, **kwargs)
