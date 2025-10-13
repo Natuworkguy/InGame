@@ -89,7 +89,9 @@ Handles registering and triggering events:
 
 Simple `tkinter` window with key event binding:
 
+* `set_resize(width: bool, height: bool)`: Sets if the window's width and height can be resized.
 * `show()`: Opens the window and starts listening for key presses.
+* `after(ms: int, func: FunctionType)`: Runs a function after a specified amount if milliseconds.
 * `quit()`: Closes the window.
 
 ---
