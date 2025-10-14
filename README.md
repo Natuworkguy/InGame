@@ -45,7 +45,7 @@ def handle_escape():
     print("Escape pressed!")
     screen.quit()
 
-screen = Screen(app, title="My InGame App", width=600, height=400)
+screen = Screen(app, title="My InGame App")
 
 screen.set_resize(True, True)
 
