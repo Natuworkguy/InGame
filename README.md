@@ -105,7 +105,7 @@ Simple `tkinter` window with key event binding:
 ## 🛠️ Development Notes
 
 Written in Python 3.10+
-Uses `tkinter`, `Enum`, and `inspect`.
+Uses `tkinter`, `Enum`, `abc`, and `inspect`.
 
 ---
 
