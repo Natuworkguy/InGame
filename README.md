@@ -111,7 +111,7 @@ Uses `tkinter`, `Enum`, and `inspect`.
 
 ## 📄 License
 
-[**`MIT License`**](https://github.com/Natuworkguy/InGame/blob/main/LICENSE)
+InGame is licensed under the [**MIT License**](https://github.com/Natuworkguy/InGame/blob/main/LICENSE)
 
 ---
 
