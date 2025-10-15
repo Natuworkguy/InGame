@@ -32,7 +32,7 @@ Use `pip install ingame` to install the project.
 
 ```python
 from ingame.core import InGame, Screen, EventType
-from ingame.objects import Text, Button, Input
+from ingame.objects import Text, Button, Input, Image
 
 app = InGame()
 
@@ -58,6 +58,12 @@ def ht_click() -> None:
     print(ht_input.get())
 
 Button(screen, text="Print input value", command=ht_click, packargs={"pady": 10})
+
+# Display a local image (resize to 100x100)
+img = Image(screen, source="/path/to/image.png", width=100, height=100, packargs={"pady": 10})
+
+# Display a remote image (auto-size)
+# img2 = Image(screen, source="https://example.com/image.jpg")
 
 
 
@@ -85,7 +91,26 @@ Handles registering and triggering events:
 * `@event(type: EventType.Key)`: Registers a function for a specific key event.
 * `trigger_event(type)`: Manually triggers an event.
 
-### `Screen`
+
+### `Image`
+
+Displays an image from a local file or remote URL.
+
+**Constructor:**
+
+```python
+Image(screen_obj, source, packargs=None, width=None, height=None, **kwargs)
+```
+
+- `screen_obj`: The `Screen` to attach the image to
+- `source`: Path to local file or remote URL
+- `packargs`: Optional dict for layout (e.g., `{"pady": 10}`)
+- `width`, `height`: Resize image (preserves aspect ratio if only one is set)
+- `**kwargs`: Additional tkinter.Label options
+
+**Methods:**
+- `config(**kwargs)`: Configure the image widget
+- `destroy()`: Remove the image from the GUI
 
 Simple `tkinter` window with key event binding:
 
