@@ -32,7 +32,7 @@ Use `pip install ingame` to install the project.
 
 ```python
 from ingame.core import InGame, Screen, EventType
-from ingame.objects import Text, Button, Input, Image
+from ingame.objects import Text, Button, Input
 
 app = InGame()
 
@@ -58,14 +58,6 @@ def ht_click() -> None:
     print(ht_input.get())
 
 Button(screen, text="Print input value", command=ht_click, packargs={"pady": 10})
-
-# Display a local image (resize to 100x100)
-img = Image(screen, source="/path/to/image.png", width=100, height=100, packargs={"pady": 10})
-
-# Display a remote image (auto-size)
-# img2 = Image(screen, source="https://example.com/image.jpg")
-
-
 
 screen.show()
 ```
