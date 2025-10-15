@@ -30,7 +30,7 @@ Examples of unacceptable behavior include:
 * The use of sexualized language or imagery, and sexual attention or
   advances of any kind
 * Trolling, insulting or derogatory comments, and personal or political attacks
-* Lying or omitting the truth to others outside of joking. We need to make sure others understand it is a joke before saying hurtful words.
+* Communicating false or misleading information to others, except in clearly identified joking contexts, is not acceptable. It is important to ensure that any humorous remarks are explicitly understood as jokes before making statements that could be perceived as hurtful.
 * Public or private harassment
 * Publishing others' private information, such as a physical or email
   address, without their explicit permission
