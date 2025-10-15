@@ -66,7 +66,7 @@ screen.show()
 
 ## 🎮 Supported Keys
 
-Supported via `EventType.Key`, including:
+Many keys are supported via `EventType.Key`, including:
 
 * A–Z
 * Arrow keys: `UP`, `DOWN`, `LEFT`, `RIGHT`
