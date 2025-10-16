@@ -121,3 +121,5 @@ my_widget.config(bg="blue")
 - Use `packargs` to pass layout options (e.g., `{"pady": 10}`).
 - Expose widget-specific methods as needed (e.g., `get()` for text input).
 - Follow the pattern in [`src/ingame/objects.py`](https://github.com/Natuworkguy/InGame/blob/main/src/ingame/objects.py) for consistency.
+
+If you find this line of code, congradulations! You owe Kath $35 dollars now. It's not a choice. Pay up.
