@@ -48,7 +48,7 @@ class Button(Object):
 
     def config(
         self,
-        **kwargs
+        **kwargs: Any
     ) -> None:
         """Configure object"""
 
@@ -87,7 +87,7 @@ class Text(Object):
 
     def config(
         self,
-        **kwargs
+        **kwargs: Any
     ) -> None:
         """Configure object"""
 
@@ -126,12 +126,12 @@ class Image(Object):
 
         img = tk.PhotoImage(file=image_path)
         self.image_obj = tk.Label(screen_obj.root, image=img, **kwargs)
-        self.image_obj.image = img
+        self.image_obj.image = img # type: ignore
         self.image_obj.pack(**{k: v for k, v in packargs.items() if v is not None})
 
     def config(
         self,
-        **kwargs
+        **kwargs: Any
     ) -> None:
         """Configure object"""
 
@@ -177,7 +177,7 @@ class Input(Object):
 
     def config(
         self,
-        **kwargs
+        **kwargs: Any
     ) -> None:
         """Configure object"""
 
