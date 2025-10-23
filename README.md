@@ -16,7 +16,7 @@
 - ✅ Decorator-based event binding
 - ✅ Enum-based key recognition (A–Z, arrows, Enter, Escape, etc.)
 - ✅ Clean and extensible architecture
-- ✅ Simple GUI rendering using `tkinter`
+- ✅ Simple GUI rendering using tkinter
 
 ---
 
